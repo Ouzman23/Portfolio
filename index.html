@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Ousmane Ndiaye</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <!-- Dark mode switcher -->
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md py-4">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <div class="font-bold text-xl text-gray-800 dark:text-white">
+                <span class="text-primary" style="color: var(--primary-color)">O</span>usmane <span class="text-primary"
+                    style="color: var(--primary-color)">N</span>diaye
+            </div>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="#accueil"
+                    class="text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">Accueil</a>
+                <a href="#a-propos"
+                    class="text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">À Propos</a>
+                <a href="#competences"
+                    class="text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">Compétences</a>
+                <a href="#education"
+                    class="text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">Éducation</a>
+                <a href="#projets"
+                    class="text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">Projets</a>
+                <a href="#contact"
+                    class="text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">Contact</a>
+            </div>
+
+            <button id="menuButton" class="md:hidden block text-gray-800 dark:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-gray-900 shadow-md">
+            <div class="container mx-auto px-6 py-2 flex flex-col space-y-3">
+                <a href="#accueil"
+                    class="block py-2 text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">Accueil</a>
+                <a href="#a-propos"
+                    class="block py-2 text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">À Propos</a>
+                <a href="#competences"
+                    class="block py-2 text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">Compétences</a>
+                <a href="#education"
+                    class="block py-2 text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">Éducation</a>
+                <a href="#projets"
+                    class="block py-2 text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">Projets</a>
+                <a href="#contact"
+                    class="block py-2 text-gray-800 dark:text-gray-200 hover:text-primary hover:dark:text-primary transition duration-300"
+                    style="--tw-text-opacity: 1; --primary: var(--primary-color);">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil"
+        class="py-20 md:py-28 flex items-center min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 reveal">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        Salut, je suis <span style="color: var(--primary-color)">Ousmane Ndiaye</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-medium mb-8 text-gray-600 dark:text-gray-300">
+                        Étudiant en Génie Informatique
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">
+                        Passionné par le développement logiciel, l'intelligence artificielle et la résolution de
+                        problèmes techniques.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact"
+                            class="px-8 py-3 rounded-full font-medium text-white transition duration-300 transform hover:scale-105"
+                            style="background-color: var(--primary-color)">
+                            Me contacter
+                        </a>
+                        <a href="#projets"
+                            class="px-8 py-3 rounded-full font-medium bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-700 transition duration-300 transform hover:scale-105">
+                            Voir mes projets
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center reveal">
+                    <!-- Avatar placeholder - would be replaced with actual image -->
+                    <div
+                        class="w-80 h-80 rounded-full overflow-hidden shadow-lg">
+                        <img src="img/presonne.jpg" alt="Ousmane Ndiaye" class="w-full h-full object-cover">
+                        ON
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="a-propos" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">À Propos de Moi</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded" style="background-color: var(--primary-color)"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center md:items-start">
+                <div class="md:w-1/2 mb-10 md:mb-0 reveal">
+                    <h3 class="text-2xl font-bold mb-4">Qui suis-je?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Je suis Ousmane Ndiaye, un étudiant passionné en Licence de Génie Informatique. Mon parcours
+                        académique m'a permis de développer une solide compréhension des fondements de l'informatique et
+                        de diverses technologies de programmation.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Ma curiosité et ma soif d'apprendre me poussent constamment à explorer de nouveaux domaines de
+                        l'informatique. Je m'intéresse particulièrement au développement web, à l'intelligence
+                        artificielle et à la cybersécurité.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        En dehors de mes études, j'aime participer à des hackathons, contribuer à des projets open
+                        source et partager mes connaissances avec ma communauté.
+                    </p>
+                </div>
+
+                <div class="md:w-1/2 md:pl-12 reveal">
+                    <h3 class="text-2xl font-bold mb-4">Informations Personnelles</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="mr-4 mt-1 text-primary" style="color: var(--primary-color)">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-bold">Nom Complet</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Ousmane Ndiaye</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-4 mt-1 text-primary" style="color: var(--primary-color)">
+                                <i class="fas fa-calendar"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-bold">Âge</h4>
+                                <p class="text-gray-600 dark:text-gray-300">22 ans</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-4 mt-1 text-primary" style="color: var(--primary-color)">
+                                <i class="fas fa-graduation-cap"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-bold">Éducation</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Licence en Génie Informatique</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-4 mt-1 text-primary" style="color: var(--primary-color)">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-300">o.ousmane.ndiaye23@gmail.com</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-4 mt-1 text-primary" style="color: var(--primary-color)">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-bold">Téléphone</h4>
+                                <p class="text-gray-600 dark:text-gray-300">+221 78 274 21 74</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-4 mt-1 text-primary" style="color: var(--primary-color)">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-bold">Localisation</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Dakar, Sénégal</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="competences" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mes Compétences</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded" style="background-color: var(--primary-color)"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold mb-6">Compétences Techniques</h3>
+
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">HTML/CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">JavaScript</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Python</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Java</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">SQL</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">React</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold mb-6">Compétences Professionnelles</h3>
+
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Travail d'équipe</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Résolution de problèmes</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Communication</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Gestion du temps</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Adaptabilité</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Créativité</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Éducation & Formation</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded" style="background-color: var(--primary-color)"></div>
+            </div>
+
+            <div class="space-y-12 max-w-3xl mx-auto">
+                <div class="timeline-container reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-l-4 border-primary"
+                        style="border-color: var(--primary-color)">
+                        <div class="flex justify-between flex-wrap">
+                            <h3 class="text-xl font-bold">Licence 2 Génie Informatique</h3>
+                            <span class="text-primary font-medium" style="color: var(--primary-color)">2024 -
+                                Présent</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 mb-3">UNIPRO, Dakar</p>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Spécialisation en développement de logiciels et systèmes d'information.
+                            Apprentissage des concepts fondamentaux de l'informatique, des algorithmes,
+                            des structures de données et du développement d'applications.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-container reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-l-4 border-primary"
+                        style="border-color: var(--primary-color)">
+                        <div class="flex justify-between flex-wrap">
+                            <h3 class="text-xl font-bold">Baccalauréat Scientifique</h3>
+                            <span class="text-primary font-medium" style="color: var(--primary-color)">2022 -
+                                2023</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 mb-3">COURS PRIVEE ALMADIES 2, Dakar</p>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Spécialité Mathématiques et Sciences Physiques avec option informatique.
+                            Obtenu avec mention A.Bien.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-container reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-l-4 border-primary"
+                        style="border-color: var(--primary-color)">
+                        <div class="flex justify-between flex-wrap">
+                            <h3 class="text-xl font-bold">Certification en Développement Web</h3>
+                            <span class="text-primary font-medium" style="color: var(--primary-color)">2024</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 mb-3">Formation en ligne</p>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Formation complète sur les technologies web modernes: HTML, CSS, JavaScript,
+                            React.js et Node.js. Réalisation de projets pratiques pour appliquer les compétences
+                            acquises.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projets" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mes Projets</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded" style="background-color: var(--primary-color)"></div>
+                <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-xl mx-auto">
+                    Voici quelques projets sur lesquels j'ai travaillé, démontrant mes compétences et mon expérience.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden reveal">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Site E-commerce</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Une plateforme e-commerce complète avec gestion des produits,
+                            panier d'achat et traitement des paiements.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">HTML/CSS</span>
+                            <span
+                                class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">JavaScript</span>
+                            <span
+                                class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">PHP</span>
+                            <span
+                                class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">MySQL</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline"
+                            style="color: var(--primary-color)">Voir les détails →</a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden reveal">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-teal-500 flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Application de Gestion des Tâches</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Une application mobile pour la gestion des tâches quotidiennes avec notifications
+                            et synchronisation entre appareils.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">React
+                                Native</span>
+                            <span
+                                class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">Firebase</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-full text-sm">Redux</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline"
+                            style="color: var(--primary-color)">Voir les détails →</a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden reveal">
+                    <div class="h-48 bg-gradient-to-r from-red-400 to-orange-500 flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Système de Recommandation</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Un système de recommandation basé sur l'apprentissage automatique
+                            pour suggérer des produits pertinents aux utilisateurs.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Python</span>
+                            <span
+                                class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Scikit-learn</span>
+                            <span
+                                class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">Pandas</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline"
+                            style="color: var(--primary-color)">Voir les détails →</a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden reveal">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-indigo-500 flex items-center justify-center">
+                        <i class="fas fa-server text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">API RESTful</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Une API RESTful pour la gestion des utilisateurs et des ressources
+                            avec authentification JWT et documentation Swagger.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Node.js</span>
+                            <span
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Express</span>
+                            <span
+                                class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline"
+                            style="color: var(--primary-color)">Voir les détails →</a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden reveal">
+                    <div class="h-48 bg-gradient-to-r from-pink-400 to-red-500 flex items-center justify-center">
+                        <i class="fas fa-chart-bar text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Dashboard Analytique</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Un tableau de bord interactif pour visualiser et analyser les données
+                            d'une entreprise avec graphiques et filtres avancés.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">React</span>
+                            <span
+                                class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">D3.js</span>
+                            <span
+                                class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">Material-UI</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline"
+                            style="color: var(--primary-color)">Voir les détails →</a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden reveal">
+                    <div class="h-48 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Jeu 2D</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Un jeu de plateforme 2D développé avec des technologies web modernes
+                            et une physique réaliste.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">JavaScript</span>
+                            <span
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Canvas</span>
+                            <span
+                                class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">Phaser.js</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline"
+                            style="color: var(--primary-color)">Voir les détails →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Me Contacter</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded" style="background-color: var(--primary-color)"></div>
+                <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-xl mx-auto">
+                    Vous avez une question ou un projet en tête ? N'hésitez pas à me contacter, je vous répondrai dans
+                    les plus brefs délais.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2 reveal">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+                            <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4"
+                                style="background-color: var(--primary-color)">
+                                <i class="fas fa-envelope text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Email</h3>
+                            <p class="text-gray-600 dark:text-gray-300">o.ousmane.ndiaye23@gmail.com</p>
+                        </div>
+
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+                            <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4"
+                                style="background-color: var(--primary-color)">
+                                <i class="fas fa-phone text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Téléphone</h3>
+                            <p class="text-gray-600 dark:text-gray-300">+221 78 274 21 74</p>
+                        </div>
+
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+                            <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4"
+                                style="background-color: var(--primary-color)">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Adresse</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Keur massa, Dakar, Sénégal</p>
+                        </div>
+
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+                            <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4"
+                                style="background-color: var(--primary-color)">
+                                <i class="fas fa-globe text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Social</h3>
+                            <div class="flex justify-center space-x-4 mt-2">
+                                <a href="#"
+                                    class="text-gray-600 dark:text-gray-300 hover:text-primary hover:dark:text-primary transition duration-300"
+                                    style="--primary: var(--primary-color)">
+                                    <i class="fab fa-linkedin text-xl"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-gray-600 dark:text-gray-300 hover:text-primary hover:dark:text-primary transition duration-300"
+                                    style="--primary: var(--primary-color)">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-gray-600 dark:text-gray-300 hover:text-primary hover:dark:text-primary transition duration-300"
+                                    style="--primary: var(--primary-color)">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 reveal">
+                    <form id="contactForm" class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Nom
+                                complet</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-base"
+                                style="--tw-ring-color: var(--primary-color)" placeholder="Votre nom" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email"
+                                class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-base"
+                                style="--tw-ring-color: var(--primary-color)" placeholder="Votre email" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="subject"
+                                class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Sujet</label>
+                            <input type="text" id="subject"
+                                class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-base"
+                                style="--tw-ring-color: var(--primary-color)" placeholder="Sujet de votre message"
+                                required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message"
+                                class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Message</label>
+                            <textarea id="message" rows="5"
+                                class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-base"
+                                style="--tw-ring-color: var(--primary-color)" placeholder="Votre message"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-3 px-6 font-medium text-white rounded-lg transition duration-300 hover:opacity-90"
+                            style="background-color: var(--primary-color)">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-800 dark:bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-lg font-bold">Ousmane Ndiaye</p>
+                    <p class="text-gray-400">Étudiant en Génie Informatique</p>
+                </div>
+
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="my-6 border-gray-700">
+
+            <p class="text-center text-gray-400">
+                &copy; 2025 Ousmane Ndiaye. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking on a mobile menu item
+        const mobileMenuItems = mobileMenu.querySelectorAll('a');
+        mobileMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Here you would typically send the form data to a server
+            console.log(`Message de ${name} (${email}): ${subject} - ${message}`);
+
+            // Show success message (In a real application, this would only happen after successful submission)
+            this.innerHTML = `
+                <div class="text-center py-8">
+                    <div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Message Envoyé!</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Merci pour votre message. Je vous contacterai dès que possible.</p>
+                </div>
+            `;
+        });
+
+        // Scroll reveal animation
+        function revealElements() {
+            const reveals = document.querySelectorAll('.reveal');
+
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', revealElements);
+        window.addEventListener('load', revealElements);
+    </script>
+</body>
+
+</html>

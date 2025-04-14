@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+        --primary-color: #5D5CDE;
+        --secondary-color: #4a4a4a;
+        --light-bg: #FFFFFF;
+        --dark-bg: #181818;
+        --light-text: #333333;
+        --dark-text: #F5F5F5;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark {
+        --secondary-color: #a0a0a0;
+    }
+
+    .progress-bar {
+        height: 8px;
+        border-radius: 4px;
+        background-color: #e0e0e0;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        background-color: var(--primary-color);
+        border-radius: 4px;
+        transition: width 1s ease-in-out;
+    }
+
+    .project-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1s, transform 1s;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .dark .project-card {
+        background-color: #252525;
+    }
+
+    .dark .progress-bar {
+        background-color: #3a3a3a;
+    }
+
+    /* Timeline styles */
+    .timeline-container {
+        position: relative;
+        padding-left: 30px;
+    }
+
+    .timeline-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 10px;
+        height: 100%;
+        width: 2px;
+        background-color: var(--primary-color);
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: 2px;
+        top: 5px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        border: 3px solid #fff;
+    }
+
+    .dark .timeline-dot {
+        border-color: #181818;
+    }
